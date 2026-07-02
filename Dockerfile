@@ -1,7 +1,4 @@
-FROM openjdk:11
-
-COPY target/spring-boot-docker-app.jar  /usr/app/
-
-WORKDIR /usr/app/
-
-ENTRYPOINT ["java", "-jar", "spring-boot-docker-app.jar"]
+FROM tomcat:latest
+COPY spring-boot-docker-app.jar /usr/local
+WORKDIR /usr/local
+ENTRYPOINT ["java","-jar","spring-boot-docker-app.jar"]
